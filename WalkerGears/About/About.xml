@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>metal gear rimworld - WalkerGears(TestVersion)</name>
+  	<author>AobaKuma</author>
+    <supportedVersions>
+		<li>1.3</li>
+	</supportedVersions>
+	<packageId>Aoba.WalkerGears</packageId>
+    <modDependencies>
+        <li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<description>
+	a simple mod that makes WalkerGears into rimworld
+	</description>
+</ModMetaData>
