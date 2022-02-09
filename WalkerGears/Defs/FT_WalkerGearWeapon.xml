@@ -10,8 +10,10 @@
       <texPath>Things/None</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <generateCommonality>0</generateCommonality>
+    <useHitPoints>true</useHitPoints>
+    <tickerType>Normal</tickerType>
     <tradeability>None</tradeability>
-    <destroyOnDrop>true</destroyOnDrop>
     <relicChance>0</relicChance>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -31,10 +33,10 @@
     <comps>
 		<li>
 			<compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
-		</li>	  
-		<li>
-			<compClass>WalkerGear.CompNoItemMode</compClass>
-		</li>
+		</li>	 
+		<li>		
+		<compClass>WalkerGear.CompNoItemMode</compClass>
+		</li>	
     </comps>
   </ThingDef>
   
@@ -212,7 +214,7 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_Autopistol</defaultProjectile>
+        <defaultProjectile>Bullet_MachinePistol</defaultProjectile>
         <burstShotCount>4</burstShotCount>
         <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
         <warmupTime>1</warmupTime>

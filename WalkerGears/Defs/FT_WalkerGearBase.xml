@@ -37,8 +37,11 @@
     <altitudeLayer>Item</altitudeLayer>
     <alwaysHaulable>True</alwaysHaulable>
     <comps>
-      <li Class="CompProperties_Forbiddable"/>
-      <li>
+		<li>
+		<compClass>CompColorable</compClass>
+		</li>
+		<li Class="CompProperties_Forbiddable"/>
+		<li>
         <!--禁止物品形式-->
         <compClass>WalkerGear.CompNoItemMode</compClass>
       </li>
@@ -95,19 +98,22 @@
       <deconstructible>false</deconstructible>
     </building>
     <comps>
-	  <li Class="CompProperties_Explosive">
-        <wickTicks>240</wickTicks>
-        <explosiveRadius>2.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <chanceNeverExplodeFromDamage>0.1</chanceNeverExplodeFromDamage>
-      </li>
-      <li Class="CompProperties_UseEffect">
-        <compClass>WalkerGear.CompUseEffect_GetIntoGear</compClass>
-      </li>
-      <li Class="CompProperties_Usable">
-        <useJob>WalkerGear_GetIn</useJob>
-        <useLabel>pilot walker gear</useLabel>
-      </li>
+		<li>
+		<compClass>CompColorable</compClass>
+		</li>
+		<li Class="CompProperties_Explosive">
+			<wickTicks>240</wickTicks>
+			<explosiveRadius>2.9</explosiveRadius>
+			<explosiveDamageType>Bomb</explosiveDamageType>
+			<chanceNeverExplodeFromDamage>0.1</chanceNeverExplodeFromDamage>
+		</li>
+		<li Class="CompProperties_UseEffect">
+			<compClass>WalkerGear.CompUseEffect_GetIntoGear</compClass>
+		</li>
+		<li Class="CompProperties_Usable">
+			<useJob>WalkerGear_GetIn</useJob>
+			<useLabel>pilot walker gear</useLabel>
+		</li>
     </comps>
   </ThingDef>
 

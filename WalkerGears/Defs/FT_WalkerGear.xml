@@ -40,7 +40,9 @@
     <equipWeapon>true</equipWeapon>
     <core>WalkerGear_ArmourRecon_Core</core>
     <building>WalkerGear_ArmourRecon_Building</building>
-	<wreckage>Urn</wreckage>
+	<wreckage>Campfire</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
     <selfExplosive>
       <amount>20</amount>
       <radius>3</radius>
@@ -125,7 +127,9 @@
     <equipWeapon>true</equipWeapon>
     <core>WalkerGear_AntiMaterial_Core</core>
     <building>WalkerGear_AntiMaterial_Building</building>
-	<wreckage>Urn</wreckage>
+	<wreckage>Campfire</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
     <selfExplosive>
       <amount>20</amount>
       <radius>3</radius>
@@ -210,7 +214,9 @@
     <equipWeapon>true</equipWeapon>
     <core>WalkerGear_SeigeSupport_Core</core>
     <building>WalkerGear_SeigeSupport_Building</building>
-	<wreckage>Urn</wreckage>
+	<wreckage>Campfire</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
     <selfExplosive>
       <amount>20</amount>
       <radius>3</radius>
@@ -330,7 +336,9 @@
     <equipWeapon>true</equipWeapon>
     <core>WalkerGear_FireSupport_Core</core>
     <building>WalkerGear_FireSupport_Building</building>
-	<wreckage>Urn</wreckage>
+	<wreckage>Campfire</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
     <selfExplosive>
       <amount>20</amount>
       <radius>3</radius>
@@ -411,7 +419,9 @@
     <equipWeapon>true</equipWeapon>
     <core>WalkerGear_AntiTank_Core</core>
     <building>WalkerGear_AntiTank_Building</building>
-	<wreckage>Urn</wreckage>
+	<wreckage>Campfire</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
     <selfExplosive>
       <amount>20</amount>
       <radius>3</radius>
@@ -522,7 +532,9 @@
     <equipWeapon>true</equipWeapon>
     <core>WalkerGear_UrbanCombat_Core</core>
     <building>WalkerGear_UrbanCombat_Building</building>
-	<wreckage>Urn</wreckage>
+	<wreckage>Campfire</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>false</sufferStun>
     <selfExplosive>
       <amount>20</amount>
       <radius>3</radius>
@@ -630,10 +642,12 @@
 		</graphicData>		
 	</backGraphic>
     <weapon>WG_Gun_Flamer</weapon>
-    <equipWeapon>true</equipWeapon>
+    <equipWeapon>false</equipWeapon>
     <core>WalkerGear_FlameThrower_Core</core>
     <building>WalkerGear_FlameThrower_Building</building>
-	<wreckage>Urn</wreckage>
+	<wreckage>Campfire</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
     <selfExplosive>
       <amount>20</amount>
       <radius>3</radius>
