@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+ 
+ <ThingDef Abstract="True" Name="BaseWalkerWeapon"  ParentName="BaseGunWithQuality">
+    <label>Walker Gear Weapon</label>
+    <description>A Walker Gear Weapon.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <generateCommonality>0</generateCommonality>
+    <useHitPoints>true</useHitPoints>
+    <tickerType>Normal</tickerType>
+    <tradeability>None</tradeability>
+    <relicChance>0</relicChance>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>10</Mass>
+    </statBases>
+    <tools>
+      <li>
+        <label>walker gear fists</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+		<li>
+			<compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+		</li>	 
+		<li>		
+		<compClass>WalkerGear.CompNoItemMode</compClass>
+		</li>	
+    </comps>
+  </ThingDef>
+  
+ <!--加特林--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Gun_Minigun</defName>
+    <label>minigun</label>
+    <description>A minigun designed for walker gear.</description>
+	<uiIconPath>Things/Weapons/WG_Minigun</uiIconPath>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+      <Mass>15.6</Mass>
+      <AccuracyTouch>0.35</AccuracyTouch>
+      <AccuracyShort>0.55</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.18</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+	<verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Minigun</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>30.9</range>
+        <burstShotCount>25</burstShotCount>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrels</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>3.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+   <!--煙霧彈--> 
+  <ThingDef ParentName="BaseBullet">
+    <defName>WG_Bullet_Smokeshell</defName>
+    <label>smoke shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(140,135,156)</color>
+    </graphicData>
+	<uiIconPath>Things/Weapons/WG_Launcher</uiIconPath>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>40</speed>
+      <damageDef>Smoke</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>2.4</explosionRadius>
+      <postExplosionSpawnThingDef>Gas_Smoke</postExplosionSpawnThingDef>
+      <postExplosionSpawnChance>1</postExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>WG_Bullet_Flashbang</defName>
+    <label>flashbang</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(140,135,156)</color>
+    </graphicData>
+	<uiIconPath>Things/Weapons/WG_Launcher</uiIconPath>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>40</speed>
+      <damageDef>Stun</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <explosionRadius>2.4</explosionRadius>
+      <postExplosionSpawnThingDef>Gas_Smoke</postExplosionSpawnThingDef>
+      <postExplosionSpawnChance>0.05</postExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+ <!--反器材步槍--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Gun_AMR</defName>
+    <label>anti-material rifle</label>
+    <description>A heavy rifle designed for walker gear. it fires single shots with great accuracy, can reach over very long distances.</description>
+    <graphicData>
+      <texPath>Things/Weapons/WG_AMR</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>2.25</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+      <Mass>10.6</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.85</AccuracyLong>
+      <RangedWeapon_Cooldown>2.1</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>WG_Bullet_AMR</defaultProjectile>
+        <warmupTime>4.5</warmupTime>
+        <range>45.9</range>
+        <soundCast>Shot_NeedleGun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>WG_Bullet_AMR</defName>
+    <label>high caliber shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/Needle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>40</damageAmountBase>
+      <armorPenetrationBase>0.55</armorPenetrationBase>
+      <stoppingPower>3.5</stoppingPower>
+      <speed>90</speed>
+    </projectile>
+  </ThingDef>
+  
+ <!--自動手槍--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Gun_AutoPistol</defName>
+    <label>autopistol</label>
+    <description>A blowback-operated self-loading pistol designed for walker gear.</description>
+    <graphicData>
+      <texPath>Things/Weapons/WG_AutoPistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+      <Mass>9.6</Mass>
+	  <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_MachinePistol</defaultProjectile>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <warmupTime>1</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrels</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+ <!--開山刀--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Melee_Machete</defName>
+    <label>machete</label>
+    <description>an alloy machete design for walker gears.</description>
+    <graphicData>
+      <texPath>Things/Weapons/WG_Machete</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>8</Mass>
+    </statBases>
+	<equippedStatOffsets>
+		<PlantWorkSpeed>0.35</PlantWorkSpeed>
+	</equippedStatOffsets>	
+    <equippedAngleOffset>-35</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>1.7</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+ <!--破城錐--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Melee_BatteringRam</defName>
+    <label>battering ram</label>
+    <description>an alloy machete design for walker gears.</description>
+    <graphicData>
+      <texPath>Things/Weapons/WG_BatteringRam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>25</Mass>
+    </statBases>
+	<equippedStatOffsets>
+		<DeepDrillingSpeed>0.25</DeepDrillingSpeed>
+		<MiningSpeed>0.35</MiningSpeed>
+	</equippedStatOffsets>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+		<li>
+			<label>handle</label>
+			<capacities>
+				<li>Blunt</li>
+			</capacities>
+			<power>14</power>
+			<cooldownTime>1.7</cooldownTime>
+		</li>
+		<li>
+			<label>body</label>
+			<capacities>
+				<li>Blunt</li>
+			</capacities>
+			<power>9</power>
+			<cooldownTime>2</cooldownTime>
+		</li>
+		<li>
+			<label>seige ram</label>
+			<capacities>			
+				<li>Demolish</li>
+			</capacities>
+			<power>40</power>
+			<cooldownTime>4</cooldownTime>
+		</li>
+    </tools>
+  </ThingDef>
+  
+ <!--火焰發射器-->   
+	<ThingDef MayRequire="VanillaExpanded.VWEHW" ParentName="BaseWalkerWeapon">
+		<defName>WG_Gun_Flamer</defName>
+		<label>flame thrower</label>
+		<description>A flame thrower designed for walker gear.</description>
+		<uiIconPath>Things/Weapons/WG_FlameThrower</uiIconPath>
+		<statBases>
+			<MarketValue>1400</MarketValue>
+			<Mass>15.6</Mass>
+			<AccuracyTouch>0.25</AccuracyTouch>
+			<AccuracyShort>0.65</AccuracyShort>
+			<AccuracyMedium>0.60</AccuracyMedium>
+			<AccuracyLong>0.45</AccuracyLong>
+			<RangedWeapon_Cooldown>8.4</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VWE_Bullet_HeavyFlamer</defaultProjectile>
+				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+				<warmupTime>1.25</warmupTime>
+				<range>19.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>InfernoCannon_Fire</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>barrels</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11.7</power>
+				<cooldownTime>3.6</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef> 
+	
+</Defs>	

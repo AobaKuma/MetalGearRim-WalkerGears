@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 偵查型 -->
+
+  <WalkerGear_ArmourRecon_Core.label>WG.AR</WalkerGear_ArmourRecon_Core.label>
+  <WalkerGear_ArmourRecon_Core.description>一種有人駕駛的雙足輕裝甲載具.\n\n 裝甲偵查型號有著較高的機動性但僅有有限的附加防護.</WalkerGear_ArmourRecon_Core.description>
+
+  <WalkerGear_ArmourRecon_Building.label>WG.AR(未啟動)</WalkerGear_ArmourRecon_Building.label>
+  <WalkerGear_ArmourRecon_Building.description>一種有人駕駛的雙足輕裝甲載具.\n\n 裝甲偵查型號有著較高的機動性但僅有有限的附加防護.</WalkerGear_ArmourRecon_Building.description>
+  <WalkerGear_ArmourRecon_Building.comps.3.useLabel>駕駛步行機甲</WalkerGear_ArmourRecon_Building.comps.3.useLabel>
+
+
+  <!-- 反器材型 -->
+
+  <WalkerGear_AntiMaterial_Core.label>WG.AM</WalkerGear_AntiMaterial_Core.label>
+  <WalkerGear_AntiMaterial_Core.description>一種有人駕駛的雙足輕裝甲載具.\n\n 反器材型號配備了一把30毫米反器材步槍,但無法裝備其他武器.</WalkerGear_AntiMaterial_Core.description>
+
+  <WalkerGear_AntiMaterial_Building.label>WG.AM(未啟動)</WalkerGear_AntiMaterial_Building.label>
+  <WalkerGear_AntiMaterial_Building.description>一種有人駕駛的雙足輕裝甲載具.\n\n 反器材型號配備了一把30毫米反器材步槍,但無法裝備其他武器.</WalkerGear_AntiMaterial_Building.description>
+  <WalkerGear_AntiMaterial_Building.comps.3.useLabel>駕駛步行機甲</WalkerGear_AntiMaterial_Building.comps.3.useLabel>
+
+
+  <!-- 破障型 -->
+
+  <WalkerGear_SeigeSupport_Core.label>WG.SS</WalkerGear_SeigeSupport_Core.label>
+  <WalkerGear_SeigeSupport_Core.description>一種有人駕駛的雙足輕裝甲載具.\n\n 攻城支援型號,裝備了煙霧彈發射器與大威力破城錐,但無法裝備其他武器. \n\n 消耗型彈藥會在駕駛登機時從備用彈藥艙自動補充</WalkerGear_SeigeSupport_Core.description>
+  <WalkerGear_SeigeSupport_Core.verbs.0.label>煙霧彈發射器</WalkerGear_SeigeSupport_Core.verbs.0.label>
+  <WalkerGear_SeigeSupport_Core.verbs.1.label>煙霧掩護</WalkerGear_SeigeSupport_Core.verbs.1.label>
+
+  <WalkerGear_SeigeSupport_Building.label>WG.SS(未啟動)</WalkerGear_SeigeSupport_Building.label>
+  <WalkerGear_SeigeSupport_Building.description>一種有人駕駛的雙足輕裝甲載具.\n\n 攻城支援型號,裝備了煙霧彈發射器與大威力破城錐,但無法裝備其他武器. \n\n 消耗型彈藥會在駕駛登機時從備用彈藥艙自動補充</WalkerGear_SeigeSupport_Building.description>
+  <WalkerGear_SeigeSupport_Building.comps.3.useLabel>駕駛步行機甲</WalkerGear_SeigeSupport_Building.comps.3.useLabel>
+
+
+  <!-- 火力壓制型 -->
+
+  <WalkerGear_FireSupport_Core.label>WG.FS</WalkerGear_FireSupport_Core.label>
+  <WalkerGear_FireSupport_Core.description>一種有人駕駛的雙足輕裝甲載具.\n\n 火力支援型號,搭載了一門大容量多管機槍,能提供有效的火力壓制.</WalkerGear_FireSupport_Core.description>
+
+  <WalkerGear_FireSupport_Building.label>WG.FS(未啟動)</WalkerGear_FireSupport_Building.label>
+  <WalkerGear_FireSupport_Building.description>一種有人駕駛的雙足輕裝甲載具.\n\n 火力支援型號,搭載了一門大容量多管機槍,能提供有效的火力壓制.</WalkerGear_FireSupport_Building.description>
+  <WalkerGear_FireSupport_Building.comps.3.useLabel>駕駛步行機甲</WalkerGear_FireSupport_Building.comps.3.useLabel>
+
+
+  <!-- 反裝甲型 -->
+
+  <WalkerGear_AntiTank_Core.label>WG.AT</WalkerGear_AntiTank_Core.label>
+  <WalkerGear_AntiTank_Core.description>一種有人駕駛的雙足輕裝甲載具.\n\n 反坦克型號,搭載了四管火箭發射器,能在安全距離執行反裝甲任務. \n\n 消耗型彈藥會在駕駛登機時從備用彈藥艙自動補充</WalkerGear_AntiTank_Core.description>
+  <WalkerGear_AntiTank_Core.verbs.0.label>反坦克火箭發射器</WalkerGear_AntiTank_Core.verbs.0.label>
+
+  <WalkerGear_AntiTank_Building.label>WG.AT(未啟動)</WalkerGear_AntiTank_Building.label>
+  <WalkerGear_AntiTank_Building.description>一種有人駕駛的雙足輕裝甲載具.\n\n 反坦克型號,搭載了四管火箭發射器,能在安全距離執行反裝甲任務. \n\n 消耗型彈藥會在駕駛登機時從備用彈藥艙自動補充</WalkerGear_AntiTank_Building.description>
+  <WalkerGear_AntiTank_Building.comps.3.useLabel>駕駛步行機甲</WalkerGear_AntiTank_Building.comps.3.useLabel>
+
+
+  <!-- 都市戰型 -->
+
+  <WalkerGear_UrbanCombat_Core.label>WG.UC</WalkerGear_UrbanCombat_Core.label>
+  <WalkerGear_UrbanCombat_Core.description>一種有人駕駛的雙足輕裝甲載具.\n\n 都市戰型號,配備有閃光彈發射器能在近距離致盲敵人,並且自身免疫.\n\n 消耗型彈藥會在駕駛登機時從備用彈藥艙自動補充</WalkerGear_UrbanCombat_Core.description>
+  <WalkerGear_UrbanCombat_Core.verbs.0.label>閃光彈發射器</WalkerGear_UrbanCombat_Core.verbs.0.label>
+
+  <WalkerGear_UrbanCombat_Building.label>WG.UC(未啟動)</WalkerGear_UrbanCombat_Building.label>
+  <WalkerGear_UrbanCombat_Building.description>一種有人駕駛的雙足輕裝甲載具.\n\n 都市戰型號,配備有閃光彈發射器能在近距離致盲敵人,並且自身免疫.\n\n 消耗型彈藥會在駕駛登機時從備用彈藥艙自動補充</WalkerGear_UrbanCombat_Building.description>
+  <WalkerGear_UrbanCombat_Building.comps.3.useLabel>駕駛步行機甲</WalkerGear_UrbanCombat_Building.comps.3.useLabel>
+
+
+  <!-- 噴火型 -->
+
+  <WalkerGear_FlameThrower_Core.label>WG.FT</WalkerGear_FlameThrower_Core.label>
+  <WalkerGear_FlameThrower_Core.description>一種有人駕駛的雙足輕裝甲載具.\n\n 都市戰火焰噴射器搭載型,配備有火焰噴射器.\n\n 消耗型彈藥會在駕駛登機時從備用彈藥艙自動補充</WalkerGear_FlameThrower_Core.description>
+
+  <WalkerGear_FlameThrower_Building.label>WG.FT(未啟動)</WalkerGear_FlameThrower_Building.label>
+  <WalkerGear_FlameThrower_Building.description>一種有人駕駛的雙足輕裝甲載具.\n\n 都市戰火焰噴射器搭載型,配備有火焰噴射器.\n\n 消耗型彈藥會在駕駛登機時從備用彈藥艙自動補充</WalkerGear_FlameThrower_Building.description>
+  <WalkerGear_FlameThrower_Building.comps.3.useLabel>駕駛步行機甲</WalkerGear_FlameThrower_Building.comps.3.useLabel>
+
+
+</LanguageData>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<WG_WalkerGearBasic.label>二足步行机甲</WG_WalkerGearBasic.label>
+  <WG_WalkerGearBasic.description>解锁常规型步行机甲的制造.</WG_WalkerGearBasic.description>
+
+  <WG_WalkerGearPlus.label>机甲附加装备</WG_WalkerGearPlus.label>
+  <WG_WalkerGearPlus.description>解锁附加装备型步行机甲的制造.</WG_WalkerGearPlus.description>
+
+  <WG_WalkerGearAdvanced.label>机甲特种装备</WG_WalkerGearAdvanced.label>
+  <WG_WalkerGearAdvanced.description>解锁特种步行机甲的制造.</WG_WalkerGearAdvanced.description>
+</LanguageData>

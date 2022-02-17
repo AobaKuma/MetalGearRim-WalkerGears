@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+
+<!--偵查型-->
+
+ <WalkerGear.WalkerGearDef>
+    <defName>WalkerGear_ArmourRecon</defName>
+    <health>100</health>
+    <shield>60</shield>
+	<movespeed>10</movespeed>
+    <shieldGraphic>
+		<offSet>(0,0.045,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearA/WalkerGear_Shield</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>
+	</shieldGraphic>
+    <frontGraphic>
+		<offSet>(0,0.03,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearA/WalkerGear_Upper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>		
+			<drawSize>(2, 2)</drawSize>			
+		</graphicData>
+	</frontGraphic>
+    <backGraphic>
+		<offSet>(0,0,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearA/WalkerGear_Lower</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>		
+	</backGraphic>
+    <weapon>WG_Melee_Machete</weapon>
+    <equipWeapon>true</equipWeapon>
+    <core>WalkerGear_ArmourRecon_Core</core>
+    <building>WalkerGear_ArmourRecon_Building</building>
+	<wreckage>WG_Disabled</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
+    <selfExplosive>
+      <amount>20</amount>
+      <radius>3</radius>
+      <damageDef>Bomb</damageDef>
+    </selfExplosive>
+  </WalkerGear.WalkerGearDef>
+
+ <ThingDef ParentName="WalkerGear_WalkerGearCoreBase">
+    <defName>WalkerGear_ArmourRecon_Core</defName>
+    <label>WG.AR</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an armour recon model which has a great mobility but weak armour.</description>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_ArmourRecon</walkerGearDef>
+      </li>
+    </comps>
+	<statBases>
+		<ArmorRating_Sharp>5</ArmorRating_Sharp>
+		<ArmorRating_Blunt>12</ArmorRating_Blunt>
+    </statBases>
+	<equippedStatOffsets>
+		<CarryWeight>65</CarryWeight>
+        <CarryBulk>30</CarryBulk>
+		<MeleeHitChance>0.25</MeleeHitChance>
+		<MeleeDodgeChance>-0.25</MeleeDodgeChance><!--更容易受擊-->
+	</equippedStatOffsets>		
+  </ThingDef>
+
+  <ThingDef ParentName="WalkerGear_WalkerGearBuildingBase">
+    <defName>WalkerGear_ArmourRecon_Building</defName>
+    <label>WG.AR(Inactivate)</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an armour recon model which has a great mobility but weak armour.</description>
+    <graphicData>
+      <texPath>Things/WalkerGearA/WalkerGear</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.55,1.55)</drawSize>
+    </graphicData>
+    <researchPrerequisites>
+      <li>WG_WalkerGearBasic</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <SellPriceFactor>1.0</SellPriceFactor>
+      <WorkToMake>10000</WorkToMake>
+    </statBases>
+	<rotatable>true</rotatable>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_ArmourRecon</walkerGearDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+<!--反器材型-->
+
+ <WalkerGear.WalkerGearDef>
+    <defName>WalkerGear_AntiMaterial</defName>
+    <health>100</health>
+    <shield>100</shield>
+	<movespeed>8</movespeed>
+    <shieldGraphic>
+		<offSet>(0,0.045,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearA/WalkerGear_Shield</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>
+	</shieldGraphic>
+    <frontGraphic>
+		<offSet>(0,0.03,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearA/WalkerGear_Upper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>			
+		</graphicData>
+	</frontGraphic>
+    <backGraphic>
+		<offSet>(0,0,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearA/WalkerGear_Lower</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>		
+	</backGraphic>
+    <weapon>WG_Gun_AMR</weapon>
+    <equipWeapon>false</equipWeapon>
+    <core>WalkerGear_AntiMaterial_Core</core>
+    <building>WalkerGear_AntiMaterial_Building</building>
+	<wreckage>WG_Disabled</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
+    <selfExplosive>
+      <amount>20</amount>
+      <radius>3</radius>
+      <damageDef>Bomb</damageDef>
+    </selfExplosive>
+  </WalkerGear.WalkerGearDef>
+
+ <ThingDef ParentName="WalkerGear_WalkerGearCoreBase">
+    <defName>WalkerGear_AntiMaterial_Core</defName>
+    <label>WG.AM</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an anti material model which equipped an anti-material rifle.</description>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_AntiMaterial</walkerGearDef>
+      </li>
+    </comps>
+	<equippedStatOffsets>
+		<CarryWeight>60</CarryWeight>
+        <CarryBulk>50</CarryBulk>  <!--默認值-->
+		<MeleeHitChance>0.25</MeleeHitChance>
+		<MeleeDodgeChance>0.25</MeleeDodgeChance><!--更不容易受擊-->
+	</equippedStatOffsets>	
+  </ThingDef>
+
+  <ThingDef ParentName="WalkerGear_WalkerGearBuildingBase">
+    <defName>WalkerGear_AntiMaterial_Building</defName>
+    <label>WG.AM(Inactivate)</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an anti material model which equipped an anti-material rifle.</description>
+    <graphicData>
+      <texPath>Things/WalkerGearA/WalkerGear</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.55,1.55)</drawSize>
+    </graphicData>
+    <researchPrerequisites>
+      <li>WG_WalkerGearAdvanced</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <SellPriceFactor>1.0</SellPriceFactor>
+      <WorkToMake>10000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>75</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+	<rotatable>true</rotatable>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_AntiMaterial</walkerGearDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+<!--破障型-->
+
+ <WalkerGear.WalkerGearDef>
+    <defName>WalkerGear_SeigeSupport</defName>
+    <health>100</health>
+    <shield>120</shield>
+	<movespeed>7</movespeed>
+    <shieldGraphic>
+		<offSet>(0,0.045,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearB/WalkerGear_Shield</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>
+	</shieldGraphic>
+    <frontGraphic>
+		<offSet>(0,0.03,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearB/WalkerGear_Upper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>			
+		</graphicData>
+	</frontGraphic>
+    <backGraphic>
+		<offSet>(0,0,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearB/WalkerGear_Lower</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>		
+	</backGraphic>
+    <weapon>WG_Melee_BatteringRam</weapon>
+    <equipWeapon>false</equipWeapon>
+    <core>WalkerGear_SeigeSupport_Core</core>
+    <building>WalkerGear_SeigeSupport_Building</building>
+	<wreckage>WG_Disabled</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
+    <selfExplosive>
+      <amount>20</amount>
+      <radius>3</radius>
+      <damageDef>Bomb</damageDef>
+    </selfExplosive>
+  </WalkerGear.WalkerGearDef>
+
+ <ThingDef ParentName="WalkerGear_WalkerGearCoreBase">
+    <defName>WalkerGear_SeigeSupport_Core</defName>
+    <label>WG.SS</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is a seige support model which equipped with smoke grenade and a seige launcher. \n\n Consumable ammo recharges automatically when the driver leaves.</description>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_SeigeSupport</walkerGearDef>
+      </li>
+      <li Class="CompProperties_Reloadable">
+        <maxCharges>3</maxCharges>
+        <ammoDef>Ammo_40x46mmGrenade_Smoke</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>smokepop</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+	<verbs>
+	 	<li Class="CombatExtended.VerbPropertiesCE">
+        <label>launch smoke grenade</label>
+		<verbClass>CombatExtended.Verb_LaunchProjectileStaticCE</verbClass>
+		<hasStandardCommand>true</hasStandardCommand>
+		<onlyManualCast>True</onlyManualCast>
+        <warmupTime>1.5</warmupTime>
+        <range>19.9</range>
+		<minRange>3</minRange>
+		<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+		<soundCastTail>GunTail_Medium</soundCastTail>
+		<muzzleFlashScale>0</muzzleFlashScale>
+		<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+		<targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		</targetParams>
+		<ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+		<defaultProjectile>Bullet_40x46mmGrenade_Smoke</defaultProjectile>
+        <rangedFireRulepack>Combat_ExplosionImpact</rangedFireRulepack>
+		</li>
+        <li>
+          <verbClass>Verb_Smokepop</verbClass>
+          <label>pop smoke</label>
+          <violent>false</violent>
+          <hasStandardCommand>true</hasStandardCommand>
+          <targetable>false</targetable>
+          <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+          <onlyManualCast>True</onlyManualCast>
+        </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="WalkerGear_WalkerGearBuildingBase">
+    <defName>WalkerGear_SeigeSupport_Building</defName>
+    <label>WG.SS(Inactivate)</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an anti material model which equipped a anti material cannon. \n\n Consumable ammo recharges automatically when the driver leaves.</description>
+    <graphicData>
+      <texPath>Things/WalkerGearB/WalkerGear</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.55,1.55)</drawSize>
+    </graphicData>
+    <researchPrerequisites>
+      <li>WG_WalkerGearBasic</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <SellPriceFactor>1.0</SellPriceFactor>
+      <WorkToMake>10000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>25</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+	<rotatable>true</rotatable>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_SeigeSupport</walkerGearDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+<!--火力壓制型-->
+
+ <WalkerGear.WalkerGearDef>
+    <defName>WalkerGear_FireSupport</defName>
+    <health>100</health>
+    <shield>140</shield>
+	<movespeed>6</movespeed>
+    <shieldGraphic>
+		<offSet>(0,0.045,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearC/WalkerGear_Shield</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>
+	</shieldGraphic>
+    <frontGraphic>
+		<offSet>(0,0.03,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearC/WalkerGear_Upper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>			
+		</graphicData>
+	</frontGraphic>
+    <backGraphic>
+		<offSet>(0,0,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearC/WalkerGear_Lower</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>		
+	</backGraphic>
+    <weapon>WG_Gun_Minigun</weapon>
+    <equipWeapon>true</equipWeapon>
+    <core>WalkerGear_FireSupport_Core</core>
+    <building>WalkerGear_FireSupport_Building</building>
+	<wreckage>WG_Disabled</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
+    <selfExplosive>
+      <amount>20</amount>
+      <radius>3</radius>
+      <damageDef>Bomb</damageDef>
+    </selfExplosive>
+  </WalkerGear.WalkerGearDef>
+
+ <ThingDef ParentName="WalkerGear_WalkerGearCoreBase">
+    <defName>WalkerGear_FireSupport_Core</defName>
+    <label>WG.FS</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is a fire support model which equipped a minigun.</description>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_FireSupport</walkerGearDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="WalkerGear_WalkerGearBuildingBase">
+    <defName>WalkerGear_FireSupport_Building</defName>
+    <label>WG.FS(Inactivate)</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is a fire support model which equipped a minigun.</description>
+    <graphicData>
+      <texPath>Things/WalkerGearC/WalkerGear</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.55,1.55)</drawSize>
+    </graphicData>
+    <researchPrerequisites>
+      <li>WG_WalkerGearPlus</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <SellPriceFactor>1.0</SellPriceFactor>
+      <WorkToMake>10000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>105</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+	<rotatable>true</rotatable>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_FireSupport</walkerGearDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+<!--反裝甲型-->
+
+ <WalkerGear.WalkerGearDef>
+    <defName>WalkerGear_AntiTank</defName>
+    <health>100</health>
+    <shield>160</shield>
+	<movespeed>5</movespeed>
+    <shieldGraphic>
+		<offSet>(0,0.045,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearD/WalkerGear_Shield</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>
+	</shieldGraphic>
+    <frontGraphic>
+		<offSet>(0,0.03,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearD/WalkerGear_Upper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>			
+		</graphicData>
+	</frontGraphic>
+    <backGraphic>
+		<offSet>(0,0,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearD/WalkerGear_Lower</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>		
+	</backGraphic>
+    <weapon>WG_Gun_AutoPistol</weapon>
+    <equipWeapon>true</equipWeapon>
+    <core>WalkerGear_AntiTank_Core</core>
+    <building>WalkerGear_AntiTank_Building</building>
+	<wreckage>WG_Disabled</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
+    <selfExplosive>
+      <amount>20</amount>
+      <radius>3</radius>
+      <damageDef>Bomb</damageDef>
+    </selfExplosive>
+  </WalkerGear.WalkerGearDef>
+
+ <ThingDef ParentName="WalkerGear_WalkerGearCoreBase">
+    <defName>WalkerGear_AntiTank_Core</defName>
+    <label>WG.AT</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an anti-tank model which equipped an anti-tank missile launcher. \n\n Consumable ammo recharges automatically when the driver leaves.</description>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_AntiTank</walkerGearDef>
+      </li>
+	  <li Class="CompProperties_Reloadable">
+        <maxCharges>4</maxCharges>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <chargeNoun>missile</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+	<verbs>
+	 	<li Class="CombatExtended.VerbPropertiesCE">
+        <label>launch anti-tank missile</label>
+		<verbClass>CombatExtended.Verb_LaunchProjectileStaticCE</verbClass>
+		<hasStandardCommand>true</hasStandardCommand>
+		<onlyManualCast>True</onlyManualCast>
+        <warmupTime>2.5</warmupTime>
+        <range>29.9</range>
+		<minRange>3</minRange>
+		<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <soundCast>InfernoCannon_Fire</soundCast>
+		<soundCastTail>GunTail_Medium</soundCastTail>
+		<muzzleFlashScale>0</muzzleFlashScale>
+		<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+		<targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		</targetParams>
+		<ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+		<defaultProjectile>Bullet_84mmAT4_HEAT</defaultProjectile>
+        <rangedFireRulepack>Combat_RangedFire</rangedFireRulepack>
+		</li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="WalkerGear_WalkerGearBuildingBase">
+    <defName>WalkerGear_AntiTank_Building</defName>
+    <label>WG.AT(Inactivate)</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an anti-tank model which equipped an anti-tank missile launcher. \n\n Consumable ammo recharges automatically when the driver leaves.</description>
+    <graphicData>
+      <texPath>Things/WalkerGearD/WalkerGear</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.55,1.55)</drawSize>
+    </graphicData>
+    <researchPrerequisites>
+      <li>WG_WalkerGearPlus</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <SellPriceFactor>1.0</SellPriceFactor>
+      <WorkToMake>10000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>75</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+	<rotatable>true</rotatable>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_AntiTank</walkerGearDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+<!--都市戰型-->
+
+ <WalkerGear.WalkerGearDef>
+    <defName>WalkerGear_UrbanCombat</defName>
+    <health>100</health>
+    <shield>140</shield>
+	<movespeed>6</movespeed>
+    <shieldGraphic>
+		<offSet>(0,0.045,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearB/WalkerGear_Shield</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>
+	</shieldGraphic>
+    <frontGraphic>
+		<offSet>(0,0.03,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearB/WalkerGear_Upper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>			
+		</graphicData>
+	</frontGraphic>
+    <backGraphic>
+		<offSet>(0,0,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearB/WalkerGear_Lower</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>		
+	</backGraphic>
+    <weapon>WG_Gun_AutoPistol</weapon>
+    <equipWeapon>true</equipWeapon>
+    <core>WalkerGear_UrbanCombat_Core</core>
+    <building>WalkerGear_UrbanCombat_Building</building>
+	<wreckage>WG_Disabled</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>false</sufferStun>
+    <selfExplosive>
+      <amount>20</amount>
+      <radius>3</radius>
+      <damageDef>Bomb</damageDef>
+    </selfExplosive>
+  </WalkerGear.WalkerGearDef>
+
+ <ThingDef ParentName="WalkerGear_WalkerGearCoreBase">
+    <defName>WalkerGear_UrbanCombat_Core</defName>
+    <label>WG.UC</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an urban combat model which equipped with flashbang.\n\n Consumable ammo recharges automatically when the driver leaves.</description>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_UrbanCombat</walkerGearDef>
+      </li> 
+      <li Class="CompProperties_Reloadable">
+        <maxCharges>3</maxCharges>
+        <ammoDef>Weapon_GrenadeFlashbang</ammoDef>
+        <ammoCountPerCharge>1</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>smokepop</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <verbs>
+	 	<li Class="CombatExtended.VerbPropertiesCE">
+        <label>launch flashbang</label>
+		<verbClass>CombatExtended.Verb_LaunchProjectileStaticCE</verbClass>
+		<hasStandardCommand>true</hasStandardCommand>
+		<onlyManualCast>True</onlyManualCast>
+        <warmupTime>1.5</warmupTime>
+        <range>19.9</range>
+		<minRange>3</minRange>
+		<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+		<soundCastTail>GunTail_Medium</soundCastTail>
+		<muzzleFlashScale>0</muzzleFlashScale>
+		<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+		<targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		</targetParams>
+		<ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+		<defaultProjectile>Proj_GrenadeFlashbang</defaultProjectile>
+        <rangedFireRulepack>Combat_ExplosionImpact</rangedFireRulepack>
+		</li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="WalkerGear_WalkerGearBuildingBase">
+    <defName>WalkerGear_UrbanCombat_Building</defName>
+    <label>WG.UC(Inactivate)</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is an urban combat model which equipped with flashbang.\n\n Consumable ammo recharges automatically when the driver leaves.</description>
+    <graphicData>
+      <texPath>Things/WalkerGearB/WalkerGear</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.55,1.55)</drawSize>
+    </graphicData>
+    <researchPrerequisites>
+      <li>WG_WalkerGearBasic</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <SellPriceFactor>1.0</SellPriceFactor>
+      <WorkToMake>10000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+	<rotatable>true</rotatable>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_UrbanCombat</walkerGearDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <!--噴火型-->
+  
+ <WalkerGear.WalkerGearDef MayRequire="VanillaExpanded.VWEHW">
+    <defName>WalkerGear_FlameThrower</defName>
+    <health>100</health>
+    <shield>140</shield>
+	<movespeed>6</movespeed>
+    <shieldGraphic>
+		<offSet>(0,0.045,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearE/WalkerGear_Shield</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>
+	</shieldGraphic>
+    <frontGraphic>
+		<offSet>(0,0.03,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearE/WalkerGear_Upper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>			
+		</graphicData>
+	</frontGraphic>
+    <backGraphic>
+		<offSet>(0,0,0)</offSet>
+	    <graphicData>
+			<texPath>Things/WalkerGearE/WalkerGear_Lower</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>	
+		</graphicData>		
+	</backGraphic>
+    <weapon>WG_Gun_Flamer</weapon>
+    <equipWeapon>false</equipWeapon>
+    <core>WalkerGear_FlameThrower_Core</core>
+    <building>WalkerGear_FlameThrower_Building</building>
+	<wreckage>WG_Disabled</wreckage>
+	<sufferEMP>true</sufferEMP>
+	<sufferStun>true</sufferStun>
+    <selfExplosive>
+      <amount>20</amount>
+      <radius>3</radius>
+      <damageDef>Bomb</damageDef>
+    </selfExplosive>
+  </WalkerGear.WalkerGearDef>
+
+ <ThingDef MayRequire="VanillaExpanded.VWEHW" ParentName="WalkerGear_WalkerGearCoreBase">
+    <defName>WalkerGear_FlameThrower_Core</defName>
+    <label>WG.FT</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is a flame thrower model which equipped with flame thrower.</description>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_FlameThrower</walkerGearDef>
+      </li> 
+    </comps>
+  </ThingDef>
+  
+  <ThingDef MayRequire="VanillaExpanded.VWEHW" ParentName="WalkerGear_WalkerGearBuildingBase">
+    <defName>WalkerGear_FlameThrower_Building</defName>
+    <label>WG.FT(Inactivate)</label>
+    <description>a bipedal,small arm equipped,manned vehicle. \n\n this is a flame thrower model which equipped with flame thrower.</description>
+    <graphicData>
+      <texPath>Things/WalkerGearE/WalkerGear</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.55,1.55)</drawSize>
+    </graphicData>
+    <researchPrerequisites>
+      <li>WG_WalkerGearAdvanced</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <SellPriceFactor>1.0</SellPriceFactor>
+      <WorkToMake>10000</WorkToMake>
+    </statBases>
+    <costList>
+      <Plasteel>75</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+	<rotatable>true</rotatable>
+    <comps>
+      <li Class="WalkerGear.CompProperties_WalkerGearBuilding">
+        <walkerGearDef>WalkerGear_FlameThrower</walkerGearDef>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>	

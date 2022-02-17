@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<!-- 加特林 -->
+
+  <WG_Gun_Minigun.label>多管机枪</WG_Gun_Minigun.label>
+  <WG_Gun_Minigun.description>设计挂载于步行机甲上的多管机枪.</WG_Gun_Minigun.description>
+  <WG_Gun_Minigun.tools.0.label>机甲辅助臂</WG_Gun_Minigun.tools.0.label>
+  <WG_Gun_Minigun.tools.1.label>枪管</WG_Gun_Minigun.tools.1.label>
+
+
+  <!-- 烟雾弹 -->
+
+  <WG_Bullet_Smokeshell.label>烟雾弹</WG_Bullet_Smokeshell.label>
+  <WG_Bullet_Flashbang.label>闪光弹</WG_Bullet_Flashbang.label>
+
+
+  <!-- 反器材步枪 -->
+
+  <WG_Gun_AMR.label>反器材步枪</WG_Gun_AMR.label>
+  <WG_Gun_AMR.description>专为步行机甲设计的重型大口径反器材步枪,能以极高的精度远程击杀装甲目标.</WG_Gun_AMR.description>
+  <WG_Gun_AMR.tools.0.label>机甲辅助臂</WG_Gun_AMR.tools.0.label>
+  <WG_Gun_AMR.tools.1.label>枪管</WG_Gun_AMR.tools.1.label>
+
+  <WG_Bullet_AMR.label>大口径反器材步枪弹</WG_Bullet_AMR.label>
+
+
+  <!-- 自动手枪 -->
+
+  <WG_Gun_AutoPistol.label>自动手枪</WG_Gun_AutoPistol.label>
+  <WG_Gun_AutoPistol.description>改造自步兵冲锋枪的机甲专用冲锋手枪</WG_Gun_AutoPistol.description>
+  <WG_Gun_AutoPistol.tools.0.label>机甲辅助臂</WG_Gun_AutoPistol.tools.0.label>
+  <WG_Gun_AutoPistol.tools.1.label>枪管</WG_Gun_AutoPistol.tools.1.label>
+
+
+  <!-- 开山刀 -->
+
+  <WG_Melee_Machete.label>开山刀</WG_Melee_Machete.label>
+  <WG_Melee_Machete.description>设计由机甲持握的复合金属开山刀.</WG_Melee_Machete.description>
+  <WG_Melee_Machete.tools.0.label>机甲辅助臂</WG_Melee_Machete.tools.0.label>
+  <WG_Melee_Machete.tools.1.label>握把</WG_Melee_Machete.tools.1.label>
+  <WG_Melee_Machete.tools.2.label>刀尖</WG_Melee_Machete.tools.2.label>
+  <WG_Melee_Machete.tools.3.label>刀刃</WG_Melee_Machete.tools.3.label>
+
+
+  <!-- 破城锥 -->
+
+  <WG_Melee_BatteringRam.label>破城锥</WG_Melee_BatteringRam.label>
+  <WG_Melee_BatteringRam.description>火药动力的短程金属锥发射器,能对建筑物造成极大伤害.</WG_Melee_BatteringRam.description>
+  <WG_Melee_BatteringRam.tools.0.label>机甲辅助臂</WG_Melee_BatteringRam.tools.0.label>
+  <WG_Melee_BatteringRam.tools.1.label>握把</WG_Melee_BatteringRam.tools.1.label>
+  <WG_Melee_BatteringRam.tools.2.label>枪身</WG_Melee_BatteringRam.tools.2.label>
+  <WG_Melee_BatteringRam.tools.3.label>破城锥</WG_Melee_BatteringRam.tools.3.label>
+
+
+  <!-- 火焰发射器 -->
+
+  <WG_Gun_Flamer.label>火焰喷射器</WG_Gun_Flamer.label>
+  <WG_Gun_Flamer.description>设计挂载于步行机甲上的火焰喷射器.</WG_Gun_Flamer.description>
+  <WG_Gun_Flamer.tools.0.label>机甲辅助臂</WG_Gun_Flamer.tools.0.label>
+  <WG_Gun_Flamer.tools.1.label>枪管</WG_Gun_Flamer.tools.1.label>
+
+
+</LanguageData>

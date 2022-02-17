@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>WG_WalkerGearBasic</defName>
+    <label>walker gear</label>
+    <description>unlock the construct of basic walker gear.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+	  <li>GasOperation</li>
+    </prerequisites>
+  <researchViewX>11.00</researchViewX>
+  <researchViewY>5.35</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WG_WalkerGearPlus</defName>
+    <label>additional equipment</label>
+    <description>unlock the additional equipment of walker gear.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>WG_WalkerGearBasic</li>
+      <li>MultibarrelWeapons</li>
+    </prerequisites>
+  <researchViewX>12.00</researchViewX>
+  <researchViewY>5.35</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>WG_WalkerGearAdvanced</defName>
+    <label>specialized equipment</label>
+    <description>unlock the specialized equipment of walker gear.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>WG_WalkerGearPlus</li>
+      <li>PrecisionRifling</li>
+    </prerequisites>
+  <researchViewX>13.00</researchViewX>
+  <researchViewY>5.35</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

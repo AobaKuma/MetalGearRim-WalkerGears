@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+ 
+ <ThingDef Abstract="True" Name="BaseWalkerWeapon"  ParentName="BaseGunWithQuality">
+    <label>Walker Gear Weapon</label>
+    <description>A Walker Gear Weapon.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/None</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <generateCommonality>0</generateCommonality>
+    <useHitPoints>true</useHitPoints>
+    <tickerType>Normal</tickerType>
+    <tradeability>None</tradeability>
+    <relicChance>0</relicChance>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>10</Mass>
+    </statBases>
+    <weaponTags>
+      <li>NoSwitch</li>
+    </weaponTags>
+    <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>walker gear fists</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>8</power>
+          <cooldownTime>2.54</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+        </li>
+    </tools>
+    <comps>
+		<li>
+			<compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+		</li>	 
+		<li>		
+		<compClass>WalkerGear.CompNoItemMode</compClass>
+		</li>	
+    </comps>
+  </ThingDef>
+  
+ <!--加特林--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Gun_Minigun</defName>
+    <label>minigun</label>
+    <description>A minigun designed for walker gear.</description>
+	<uiIconPath>Things/Weapons/WG_Minigun</uiIconPath>
+    <statBases>
+      <Mass>39.00</Mass>
+      <RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
+      <SightsEfficiency>1</SightsEfficiency>
+      <ShotSpread>0.06</ShotSpread>
+      <SwayFactor>1.32</SwayFactor>
+      <Bulk>8.02</Bulk>
+    </statBases>
+	<verbs>
+		<li Class="CombatExtended.VerbPropertiesCE">
+		  <recoilAmount>0.58</recoilAmount>
+		  <recoilPattern>Mounted</recoilPattern>
+		  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+		  <hasStandardCommand>true</hasStandardCommand>
+		  <defaultProjectile>Bullet_762x51mmNATO_FMJ</defaultProjectile>
+		  <warmupTime>2.3</warmupTime>
+		  <range>62</range>
+		  <burstShotCount>100</burstShotCount>
+		  <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+		  <soundCast>Shot_Minigun</soundCast>
+		  <soundCastTail>GunTail_Medium</soundCastTail>
+		  <muzzleFlashScale>9</muzzleFlashScale>
+		</li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+      <magazineSize>600</magazineSize>
+      <reloadTime>9.2</reloadTime>
+      <ammoSet>AmmoSet_762x51mmNATO</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aimedBurstShotCount>30</aimedBurstShotCount>
+      </li>
+    </comps>
+    <tools>
+		<li Class="CombatExtended.ToolCE">
+          <label>barrels</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>2.44</cooldownTime>
+          <armorPenetrationBlunt>3.5</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrels</linkedBodyPartsGroup>
+        </li>
+    </tools>
+  </ThingDef>
+  
+ <!--反器材步槍 使用20毫米機砲砲彈,6發裝--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Gun_AMR</defName>
+    <label>anti-material rifle</label>
+    <description>A heavy rifle designed for walker gear. it fires single shots with great accuracy, can reach over very long distances.</description>
+    <graphicData>
+      <texPath>Things/Weapons/WG_AMR</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>2.25</drawSize>
+    </graphicData>
+    <statBases>
+	  <SightsEfficiency>1.5</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>2.89</SwayFactor>
+      <Bulk>25.0</Bulk>
+      <Mass>20.30</Mass>
+      <RangedWeapon_Cooldown>0.58</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_145x114mm_FMJ</defaultProjectile>
+        <warmupTime>2.8</warmupTime>
+        <range>62</range>
+        <soundCast>HeavyMG</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>6</magazineSize>
+        <reloadTime>6.3</reloadTime>
+        <ammoSet>AmmoSet_25x137mmNATO</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+    <tools>
+      <li Class="CombatExtended.ToolCE">
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2.02</cooldownTime>
+        <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+      </li>
+      <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.55</cooldownTime>
+        <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+  </ThingDef>
+  
+ <!--自動手槍--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Gun_AutoPistol</defName>
+    <label>autopistol</label>
+    <description>A blowback-operated self-loading pistol designed for walker gear.</description>
+    <graphicData>
+      <texPath>Things/Weapons/WG_AutoPistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>3.6</Mass>
+      <RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
+      <SightsEfficiency>0.7</SightsEfficiency>
+      <ShotSpread>0.16</ShotSpread>
+      <SwayFactor>1.93</SwayFactor>
+      <Bulk>2.95</Bulk>
+    </statBases>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>1.75</recoilAmount>
+		<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+		<hasStandardCommand>true</hasStandardCommand>
+		<defaultProjectile>Bullet_45ACP_FMJ</defaultProjectile>
+		<warmupTime>0.6</warmupTime>
+		<range>12</range>
+		<burstShotCount>6</burstShotCount>
+		<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+		<soundCast>Shot_MachinePistol</soundCast>
+		<soundCastTail>GunTail_Light</soundCastTail>
+		<muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+	<comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+		<magazineSize>24</magazineSize>
+		<reloadTime>4</reloadTime>
+		<ammoSet>AmmoSet_45ACP</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aimedBurstShotCount>3</aimedBurstShotCount>
+      </li>
+    </comps>
+    <tools>
+     <li Class="CombatExtended.ToolCE">
+        <label>muzzle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.54</cooldownTime>
+        <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+        <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+      </li>
+    </tools>
+  </ThingDef>
+
+ <!--開山刀--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Melee_Machete</defName>
+    <label>machete</label>
+    <description>an alloy machete design for walker gears.</description>
+    <graphicData>
+      <texPath>Things/Weapons/WG_Machete</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+		<Mass>8</Mass>
+		<Bulk>3.5</Bulk>
+		<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>	
+    </statBases>
+	<equippedStatOffsets>
+		<MeleeCritChance>0.2</MeleeCritChance>
+		<MeleeParryChance>0.35</MeleeParryChance>
+		<MeleeDodgeChance>0.2</MeleeDodgeChance>	
+		<PlantWorkSpeed>0.35</PlantWorkSpeed>
+	</equippedStatOffsets>	
+    <equippedAngleOffset>-35</equippedAngleOffset>
+	<tools>
+		<li Class="CombatExtended.ToolCE">
+			<label>handle</label>
+			<capacities>
+				<li>Poke</li>
+			</capacities>
+			<power>2</power>
+			<cooldownTime>1.44</cooldownTime>
+			<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
+		<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+		</li>
+		<li Class="CombatExtended.ToolCE">
+			<label>point</label>
+			<capacities>
+				<li>Stab</li>
+			</capacities>
+			<power>27</power>
+			<cooldownTime>1.44</cooldownTime>
+			<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
+			<armorPenetrationSharp>0.48</armorPenetrationSharp>
+			<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+		</li>
+		<li Class="CombatExtended.ToolCE">
+			<label>edge</label>
+			<capacities>
+				<li>Cut</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>1.34</cooldownTime>
+			<chanceFactor>1.33</chanceFactor>
+			<armorPenetrationBlunt>0.956</armorPenetrationBlunt>
+			<armorPenetrationSharp>0.43</armorPenetrationSharp>
+			<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+		</li>
+	</tools>
+  </ThingDef>
+  
+ <!--破城錐--> 
+  <ThingDef ParentName="BaseWalkerWeapon">
+    <defName>WG_Melee_BatteringRam</defName>
+    <label>battering ram</label>
+    <description>an alloy machete design for walker gears.</description>
+    <graphicData>
+      <texPath>Things/Weapons/WG_BatteringRam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+		<Mass>25</Mass>
+		<Bulk>10.5</Bulk>
+		<MeleeCounterParryBonus>0.25</MeleeCounterParryBonus>	
+    </statBases>
+	<equippedStatOffsets>
+		<DeepDrillingSpeed>0.25</DeepDrillingSpeed>
+		<MiningSpeed>0.35</MiningSpeed>
+		<MeleeCritChance>0.15</MeleeCritChance>
+		<MeleeParryChance>0.45</MeleeParryChance>
+		<MeleeDodgeChance>0.05</MeleeDodgeChance>	
+	</equippedStatOffsets>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+	<tools>
+		<li Class="CombatExtended.ToolCE">
+			<label>handle</label>
+			<capacities>
+				<li>Blunt</li>
+			</capacities>
+			<power>2</power>
+			<cooldownTime>1.74</cooldownTime>
+			<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
+		<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+		</li>
+		<li Class="CombatExtended.ToolCE">
+			<label>seige ram</label>
+			<capacities>
+				<li>Demolish</li>
+			</capacities>
+			<power>40</power>
+			<cooldownTime>3</cooldownTime>
+			<armorPenetrationBlunt>0.925</armorPenetrationBlunt>
+			<armorPenetrationSharp>1.548</armorPenetrationSharp>
+			<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+		</li>
+		<li Class="CombatExtended.ToolCE">
+			<label>body</label>
+			<capacities>
+				<li>Blunt</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>1.54</cooldownTime>
+			<chanceFactor>1.63</chanceFactor>
+			<armorPenetrationBlunt>0.56</armorPenetrationBlunt>
+			<armorPenetrationSharp>0.43</armorPenetrationSharp>
+			<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+		</li>
+	</tools>
+  </ThingDef>
+  
+ <!--火焰發射器-->   
+	<ThingDef ParentName="BaseWalkerWeapon">
+		<defName>WG_Gun_Flamer</defName>
+		<label>flame thrower</label>
+		<description>A flame thrower designed for walker gear.</description>
+		<uiIconPath>Things/Weapons/WG_FlameThrower</uiIconPath>
+		<statBases>
+			<Mass>15.6</Mass>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.15</ShotSpread>
+			<SwayFactor>1.35</SwayFactor>
+			<Bulk>8</Bulk>
+			<RangedWeapon_Cooldown>0.39</RangedWeapon_Cooldown>
+		</statBases>
+		 <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <recoilAmount>0.85</recoilAmount>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Flamethrower_Prometheum</defaultProjectile>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <warmupTime>1.1</warmupTime>
+        <range>11</range>
+        <minRange>3</minRange>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <soundCast>HissFlamethrower</soundCast>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <burstShotCount>20</burstShotCount>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>40</magazineSize>
+        <reloadTime>5</reloadTime>
+        <ammoSet>AmmoSet_Flamethrower</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiUseBurstMode>true</aiUseBurstMode>
+        <aimedBurstShotCount>10</aimedBurstShotCount>
+        <aiAimMode>SuppressFire</aiAimMode>
+      </li>
+    </comps>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2.02</cooldownTime>
+				<armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	</ThingDef> 
+	
+</Defs>	

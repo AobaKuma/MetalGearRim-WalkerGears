@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>	
+
+
+ <ThingDef ParentName="BuildingBase">
+    <defName>WG_Disabled</defName>
+    <label>wreckage</label>
+    <description>a destroyed walker gear, can restore some useful resource.</description>    
+    <thingClass>Building_WorkTable</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/WalkerGearDisabled</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <damageData>
+        <rect>(0.2,0,0.6,0.1)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <tickerType>Never</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <fillPercent>0.25</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>0</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <selectable>true</selectable>
+    <costList>
+      <Steel>150</Steel> 
+      <Uranium>50</Uranium>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <resourcesFractionWhenDeconstructed>0.25</resourcesFractionWhenDeconstructed>
+  </ThingDef>
+
+ <ApparelLayerDef>
+    <defName>WalkerGearLayer</defName>
+    <label>core</label>
+    <drawOrder>900</drawOrder>
+  </ApparelLayerDef>
+  
+    <DesignatorDropdownGroupDef>
+    <defName>WG_WalkerGear</defName>
+    <label>walker gear</label>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="WalkerGear_WalkerGearCoreBase" Abstract="True">
+    <thingClass>WalkerGear.WalkerGear_Core</thingClass>
+    <category>Item</category>
+    <selectable>True</selectable>
+    <pathCost>0</pathCost>
+    <generateCommonality>0</generateCommonality>
+    <tradeability>None</tradeability>
+    <useHitPoints>False</useHitPoints>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+		<shaderType>Transparent</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+		<texPath>Things/None</texPath>
+    </graphicData>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <tickerType>Normal</tickerType>
+    <statBases>
+		<ArmorRating_Sharp>10</ArmorRating_Sharp>  <!--默認值-->
+		<ArmorRating_Blunt>15</ArmorRating_Blunt>  <!--默認值-->
+		<Mass>0</Mass>  <!--默認值-->
+		<Bulk>0</Bulk>  <!--默認值-->
+		<WornBulk>0</WornBulk>
+		<WorkToMake>0</WorkToMake>
+		<Flammability>0</Flammability>
+    </statBases>
+    <equippedStatOffsets>
+		<Suppressability>-0.95</Suppressability>
+		<CarryWeight>40</CarryWeight>
+        <CarryBulk>25</CarryBulk>  <!--默認值-->
+		<Flammability>-1</Flammability>
+		<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+		<RestRateMultiplier>-0.5</RestRateMultiplier>
+		<MeleeDodgeChance>-0.5</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>True</alwaysHaulable>
+    <comps>
+		<li>
+		<compClass>CompColorable</compClass>
+		</li>
+		<li Class="CompProperties_Forbiddable"/>
+		<li>
+        <!--禁止物品形式-->
+        <compClass>WalkerGear.CompNoItemMode</compClass>
+      </li>
+    </comps>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <layers>
+        <li>WalkerGearLayer</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase" Name="WalkerGear_WalkerGearBuildingBase" Abstract="True">
+    <designatorDropdown>WG_WalkerGear</designatorDropdown>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <useHitPoints>true</useHitPoints>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>1</constructionSkillPrerequisite>
+    <costList>
+      <Steel>150</Steel> 
+      <Uranium>50</Uranium>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>	
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <statBases>
+      <Flammability>0</Flammability>
+      <SellPriceFactor>1.0</SellPriceFactor>
+      <Mass>300</Mass>	
+	  <Bulk>50</Bulk>  <!--默認值-->
+      <WorkToMake>15000</WorkToMake>
+    </statBases>
+    <building>
+      <isEdifice>false</isEdifice>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <alwaysDeconstructible>false</alwaysDeconstructible>
+      <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+		<li>
+		<compClass>CompColorable</compClass>
+		</li>
+		<li Class="CompProperties_Explosive">
+			<wickTicks>240</wickTicks>
+			<explosiveRadius>2.9</explosiveRadius>
+			<explosiveDamageType>Bomb</explosiveDamageType>
+			<chanceNeverExplodeFromDamage>0.1</chanceNeverExplodeFromDamage>
+		</li>
+		<li Class="CompProperties_UseEffect">
+			<compClass>WalkerGear.CompUseEffect_GetIntoGear</compClass>
+		</li>
+		<li Class="CompProperties_Usable">
+			<useJob>WalkerGear_GetIn</useJob>
+			<useLabel>pilot walker gear</useLabel>
+		</li>
+    </comps>
+  </ThingDef>
+
+  <JobDef>
+    <defName>WalkerGear_GetIn</defName>
+    <driverClass>JobDriver_UseItem</driverClass>
+    <reportString>pilot walker gear</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <joyDuration>400</joyDuration><!--Tick-->
+  </JobDef>
+</Defs>	
